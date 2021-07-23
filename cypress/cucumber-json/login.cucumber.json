@@ -1,0 +1,62 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Login page",
+    "line": 2,
+    "id": "login-page",
+    "tags": [
+      {
+        "name": "@mvp",
+        "line": 1
+      }
+    ],
+    "uri": "login.feature",
+    "elements": [
+      {
+        "id": "login-page;display-the-login-page",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Display the login page",
+        "tags": [
+          {
+            "name": "@mvp",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I launch the core-app page",
+            "result": {
+              "status": "passed",
+              "duration": 3141000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I should see the login page",
+            "result": {
+              "status": "passed",
+              "duration": 727000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I should see the login form",
+            "result": {
+              "status": "passed",
+              "duration": 64000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
