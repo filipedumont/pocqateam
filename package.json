@@ -1,0 +1,48 @@
+{
+  "scripts": {
+    "cypress:open:staging": "CYPRESS_ENV=staging yarn run cypress open",
+    "cypress:open": "cypress open",
+    "test": "./node_modules/.bin/cypress-tags run -e TAGS='@mvp' --spec 'cypress/integration/**/*.feature'",
+    "test:debug:staging": "CYPRESS_ENV=staging yarn run test:debug",
+    "test:debug": "cypress run --headed --browser chrome --env TAGS='@mvp' --spec 'cypress/integration/**/*.feature'",
+    "report": "node cypress/cucumber-html-report.js"
+  },
+  "license": "Private",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cypress": "^8.0.0",
+    "cypress-cucumber-preprocessor": "^4.1.4",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.1.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
+    "multiple-cucumber-html-reporter": "^1.18.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "git add"
+    ]
+  }
+}
